@@ -24,6 +24,7 @@ export default function useFetch(selection) {
       if (!selection) {
         return;
       }
+      setLoding(true);
       const url = `${apiUrl}/${selection}`;
       try {
         const res = await fetch(url, options);
