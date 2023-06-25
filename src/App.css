@@ -1,0 +1,25 @@
+.app {
+  text-align: center;
+  background: url("./imgs/bck.webp");
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  font-size: 30px;
+}
+
+/* 
+main {
+  background: url("./imgs/bck.webp");
+  display: flex; 
+  height: 100vh;
+  flex: 1;
+  flex-direction: column; 
+   padding: 10px;
+} */
