@@ -3,12 +3,8 @@ export default function Options({ selection, onClickhandler }) {
 
   console.log("slection:", selection);
 
-  // function slectionHandler(ques) {
-  //   props.setSelection(ques);
-  // }
-
   return questions.map((el, index) => (
-    <button onClick={() => onClickhandler(el)} key={index}>
+    <button onClick={onClickhandler(el)} key={index}>
       {el}
     </button>
   ));

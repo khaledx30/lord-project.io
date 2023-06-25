@@ -8,16 +8,25 @@ export default function useFetch(selection) {
 
   const apiUrl = "https://the-one-api.dev/v2";
 
-  const apiToken = import.meta.env.VITE_API_KEY;
+  const API_TOKEN = import.meta.env.VITE_API_KEY;
+
+  console.log(API_TOKEN);
+
+  let options = {
+    headers: {
+      method: "GET",
+      Authorization: `Bearer ${API_TOKEN}`,
+    },
+  };
 
   useEffect(() => {
     async function fetchData() {
       if (!selection) {
         return;
       }
-      const url = `${apiUrl}/book`;
+      const url = `${apiUrl}/${selection}`;
       try {
-        const res = await fetch(url);
+        const res = await fetch(url, options);
         const jsonData = await res.json();
         console.log("Data:", jsonData);
         setData(jsonData);
@@ -28,6 +37,6 @@ export default function useFetch(selection) {
       }
     }
     fetchData();
-  }, []);
+  }, [selection]);
   return { data, loding, error };
 }
