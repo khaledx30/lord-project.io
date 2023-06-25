@@ -24,11 +24,7 @@ export default function DashPord() {
   };
   return (
     <div className={styles.dashpord}>
-      <Options
-        onClickhandler={onClickhandler}
-        selection={selection}
-        data={data}
-      />
+      <Options onClickhandler={onClickhandler} />
       {loding && <Loding />}
       {data && !loding && (
         <div className={styles["dashpord_el"]}>

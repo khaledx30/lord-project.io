@@ -1,7 +1,5 @@
-export default function Options({ selection, onClickhandler }) {
+export default function Options({ onClickhandler }) {
   const questions = ["book", "movie", "character"];
-
-  console.log("slection:", selection);
 
   return questions.map((el, index) => (
     <button onClick={onClickhandler(el)} key={index}>

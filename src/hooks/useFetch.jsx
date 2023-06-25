@@ -1,4 +1,3 @@
-import React from "react";
 import { useState, useEffect } from "react";
 
 export default function useFetch(selection) {
@@ -9,8 +8,6 @@ export default function useFetch(selection) {
   const apiUrl = "https://the-one-api.dev/v2";
 
   const API_TOKEN = import.meta.env.VITE_API_KEY;
-
-  console.log(API_TOKEN);
 
   let options = {
     headers: {
@@ -24,12 +21,13 @@ export default function useFetch(selection) {
       if (!selection) {
         return;
       }
+
       setLoding(true);
       const url = `${apiUrl}/${selection}`;
+
       try {
         const res = await fetch(url, options);
         const jsonData = await res.json();
-        console.log("Data:", jsonData);
         setData(jsonData);
       } catch (error) {
         setError(error.message);
