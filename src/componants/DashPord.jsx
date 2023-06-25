@@ -9,7 +9,7 @@ import Loding from "./Loding";
 
 export default function DashPord() {
   const [selection, setSelection] = useState(null);
-  const { data, loding, error } = useFetch(selection);
+  const { data, loding } = useFetch(selection);
 
   function onClickhandler(clickedButton) {
     return () => {
