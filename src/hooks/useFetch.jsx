@@ -8,7 +8,7 @@ export default function useFetch(selection) {
   const apiUrl = "https://the-one-api.dev/v2";
 
   const API_TOKEN = import.meta.env.VITE_API_KEY;
-  // headers new stuff
+  // headers new stuffd
   let options = {
     method: "GET",
     headers: {
